@@ -1,0 +1,23 @@
+@q_color: deeppink;
+@man_color: skyblue;
+.box_body (@width:100px,@height:100px,@bcolor:blue){
+  width:@width;
+  height:@height;
+  background: @bcolor;
+}
+.rule(@raduis_var:5px){
+  -moz-border-radius: @raduis_var;
+  -foz-border-radius: @raduis_var;
+  -webkit-border-raduis: @raduis_var;
+
+}
+.box1{
+  .rule;
+  float:left;
+  .box_body(100px,100px,@q_color);
+}
+.box2{
+  .rule(10px);
+  float:right;
+  .box_body(100px,20px,green);
+}

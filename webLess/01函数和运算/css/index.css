@@ -1,0 +1,29 @@
+.w2h {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+.box1 {
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background: red;
+}
+.box2 {
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 2px solid #000000;
+  border-radius: 15px;
+  background: blue;
+}
+.box3 {
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 3px solid #000000;
+  border-radius: 30px;
+  background: yellow;
+}

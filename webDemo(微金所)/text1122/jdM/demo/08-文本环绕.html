@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div:first-child{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            float: left;
+        }
+        div:last-child{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div>.回顾
+    2.移动端常见事件-touch事件
+    touchstart事件：当手指触摸屏幕时触发
+    1.添加方式
+    dom.addEventListener('touchstart',function(e){});
+    2:事件源e的说明
+    targetTouches:目标元素中所有当前触摸
+    changedTouches:页面上最新更改的所有触摸
+    touches:页面上的所有触摸
+    3.常用属性
+    clientX:触摸目标点在视口中的X坐标位置
+    clientY:触摸目标点在视口中的Y坐标位置
+    pageX:触摸目标点在页面中的X坐标位置
+    pageY:触摸目标点在页面中的Y坐标位置
+    screenX:触摸目标点在屏幕中的X坐标位置
+    screenY:触摸目标点在屏幕中的Y坐标位置
+    touchmove事件：当手指在屏幕上滑动时连续的持续的触发
+    touchend事件：当手指离开屏幕时触发，只会记录changedTouches
+
+    3.过渡和动画结束事件：在WebKit引擎的浏览器中，当CSS 3的animation动画执行结束时，触发webkitAnimationEnd事件,当CSS 3的transition动画执行结束时，触发webkitTransitionEnd事件。可以通过如下所示的代码捕捉这两个事件
+    webkitTransitionEnd/transitionEnd:过渡结束后触发
+    webkitTransformEnd/transformEnd:动画结束后触发
+
+    4.gusture事件-IOS
+    gesturestart事件
+    gesturechange事件
+    gestureend事件
+
+    5.使用移动端常见事件完成移动端常见效果
+
+    6.轮播图：
+    思路：1.获取到dom元素
+    2.自动滚动
+    3.图片滑动:一定要记得让图片有高度：display:block/ul:clear:both
+    a.默认下一张
+    b.判断是否到最后一张，如果是，关闭过渡效果将图片移动到我们想要的位置
+    c.以后添加手势之后，还需要判断是否是第0张，如果是，则移动到想要的位置
+    4.当滑动距离超过一定距离的时候，滚到到下一张或者上一张
+    5.当滚动距离不超过一定距离的时候，吸附回去
+
+    代码：
+    1.常规代码
+    2.代码封装
+
+    /**
+    * Created by Administrator on 2016/7/12.
+    */
+    window.onload=function(){
+    headerAffect();
+    bannerAnimation();
+    };
+
+    /*当页面往上滚动的时候，header块的背景慢慢显示，直到页面完全的将banner移除出视口，就会保持某种固定色
+    反过来，如果body页面将banner移进视口，颜色慢慢变换为透明*/
+    function  headerAffect(){
+    //1.获取header块
+    var header=document.querySelector(".jd_header");
+    //2.获取banner
+    var banner=document.querySelector(".jd_banner");
+    //3.获取banner的高度，我们要以此做为判断的依剧
+    var bHeight=banner.offsetHeight;
+    //4.监听页面滚动
+    var opacity=0;
+    window.onscroll=function(){
+    //5.获取body移除出页面的设计
+    var wHeight=document.body.scrollTop;
+    //6.判断
+    if(wHeight < bHeight){
+    opacity=wHeight/bHeight;
+    }
+    else{
+    opacity=1;
+    }
+    //7.重新设置样式
+    header.style.background="rgba(201,21,35,"+opacity+")";
+    }
+    }</div>
+</body>
+</html>

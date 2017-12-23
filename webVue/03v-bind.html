@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue1028.js"></script>
+</head>
+<body>
+<inp id="app">
+    <input type="text" v-bind:title="titleVal">
+    <input type="text" :title="titleVal">
+    <input type="text" title="titleVal">
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            titleVal:"来吧"
+        }
+    })
+</script>
+</body>
+</html>

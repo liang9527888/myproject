@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue1028.js"></script>
+    <script src="../vue-router073.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a v-link="{path:'/login'}">登录</a>
+        <a v-link="{path:'/register'}">注册</a>
+        <router-view></router-view>
+    </div>
+</body>
+<script>
+    //设置根组件
+    var root = Vue.extend({});
+    //创建组件
+    var login = Vue.extend({
+        template:"<h3>登录</h3>"
+    })
+    var register = Vue.extend({
+        template:"<h3>注册</h3>"
+    })
+    //创建路由对象
+    var router = new VueRouter();
+    //设置路由并设置路由规则
+    router.map({
+        "login":{
+            component:login
+        },
+        "register":{
+            component:register
+        }
+    })
+    //开启路由
+    router.start(root,'#app');
+    //设置默认跳转路径
+    router.redirect({"/":"login"});
+</script>
+</html>

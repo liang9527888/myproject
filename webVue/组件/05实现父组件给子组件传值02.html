@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue1028.js"></script>
+</head>
+<body>
+<div id="app">
+    <csol></csol>
+</div>
+<template id="tpl1">
+    <!--<div :is="childcomponent"></div>-->
+    <!-- 标签要用组件名称 -->
+    <one></one>
+    <button @click="childcomponent">改变</button>
+    <!--<one :tip2="msg1" ></one>-->
+</template>
+<template id="tpl2">
+    <!--<div :is="childcomponent"></div>-->
+    <!-- 标签要用组件名称 -->
+    <div>11111</div>
+</template>
+</body>
+<script>
+    //创建组件
+    Vue.component("csol",{
+        template:"#tpl1",
+        data:function(){
+            //设置默认加载子组件
+            return {
+                childcomponent:"one",
+                msg1:"12312323",
+                msg2:{
+                    "name":"李四",
+                    "age":"30",
+                    "job":"PHP工程师"
+                }
+            }
+        },
+        components:{
+            "one":{
+                template:"#tpl2",
+                props:['tip2']
+            },
+            "two":{
+                template:"{{tip2}}",
+                props:['tip2']
+            }
+        }
+    })
+    new Vue({
+        "el":"#app",
+        "data":{}
+    })
+</script>
+</html>

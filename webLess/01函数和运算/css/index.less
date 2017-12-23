@@ -1,0 +1,28 @@
+@n:1;
+@color: #000000;
+@r_n:5px;
+.w2h {
+  width:100px;
+  height: 100px;
+  float: left;
+}
+.box1{
+  .w2h;
+  border:(@n*1px) solid (#000000 * 1);
+  border-radius: (@r_n * 1);
+  background: red;
+}
+
+.box2{
+  .w2h;
+  border:(@n*2px) solid (#000000 * 2);
+  border-radius: (@r_n * 3);
+  background: blue;
+}
+
+.box3{
+  .w2h;
+  border:(@n*3px) solid (#000000 * 3);
+  border-radius: (@r_n * 6);
+  background: yellow;
+}

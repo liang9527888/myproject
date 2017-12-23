@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue1028.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--父组件-->
+    <father></father>
+</div>
+<template id="index">
+    <button @click="defalut='defalut'">默认</button>
+    <button @click="defalut='son'">son</button>
+    <son :tip="msg" :fuck="msg1">what the fuck</son>
+</template>
+</body>
+<script>
+    //创建组件
+    Vue.component("father",{
+        data:function(){
+            return {
+                defalut:"",
+                msg:"都什么辣鸡啊,奥伯恩,我们走",
+                msg1:"都什么辣鸡啊,马里奥,我们走"
+            };
+        },
+        template:"#index",
+        components:{
+            "defalut":{
+                template:"我是默认组件,手撕逼"
+            },
+            "son":{
+                //传入要接受的内容
+                template:"<h3>哈哈哈</h3>--->{{tip}}{{fuck}}",
+                props:["tip","fuck"]
+            }
+        }
+    });
+    new Vue({
+        "el":"#app",
+        "data":{}
+    })
+</script>
+</html>

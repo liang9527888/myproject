@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue1028.js"></script>
+</head>
+<body>
+<div id="app">
+    <button @click="toggle">显示隐藏</button>
+    <index></index>
+</div>
+<template id="index">
+    <button @click="componentName='login'">登录</button>
+    <button @click="componentName='register'">注册</button>
+    <!-- 默认会查找data属性中为componentName值的自组件 -->
+    <component :is="componentName"></component>
+</template>
+<script>
+    Vue.component("index",{
+        //初始化组件数据
+        data:function(){
+            return {
+                componentName:"login",
+                msg:"123123"
+            }
+        },
+        template:"#index",
+        components:{
+            "login":{
+                template:"<h3>哈哈,我是登录子组件</h3>",
+            },
+            "register":{
+                template:"<h3>哈哈,我是注册子组件</h3>",
+            }
+        }
+    });
+    Vue.component("login",{
+        template:"<h3>登录</h3>"
+    })
+    new Vue({
+        el:"#app",
+        data:{}
+    })
+</script>
+</body>
+</html>

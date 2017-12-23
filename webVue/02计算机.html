@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue1028.js"></script>
+</head>
+<body>
+<div id="app">
+<input type="text" v-model="num1">+<input type="text" v-model="num2">=
+<br/>
+<input type="text" v-model="num3">
+<button v-on:click="addSum">计算</button>
+</div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+          num1:0,
+          num2:0,
+          num3:0
+        },
+        methods:{
+            "addSum":function(){
+                this.num3 = parseInt(this.num1)+parseInt(this.num2);
+            }
+        }
+    })
+</script>
+</html>

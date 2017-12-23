@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var index = 0;
+    //自动轮播
+    function lunbo(obj){
+        index++;
+        //设置样式 过渡
+        obj.style.transition = "all 0.3";
+        obj,style.webkitTransition = "all 0.3";
+        //设置转变
+        obj.style.transform = -index*obj.style.width();
+        //设置转变
+    }
+</script>
+</body>
+</html>

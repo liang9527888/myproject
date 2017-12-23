@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue1028.js"></script>
+</head>
+<body>
+<div id="app">
+    <button @click="toggle">显示隐藏</button>
+    <register></register>
+    <login></login>
+    <div v-show="show">hello world!</div>
+</div>
+<script>
+    Vue.component("register",{
+        template:"<h3>注册</h3>"
+    });
+    Vue.component("login",{
+        template:"<h3>登录</h3>"
+    })
+    new Vue({
+        el:"#app",
+        data:{}
+    })
+</script>
+</body>
+</html>

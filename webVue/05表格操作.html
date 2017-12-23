@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue1028.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="tableid">
+    <input type="text" v-model="tablename">
+    <br/>搜索框:<input type="text" v-model="searchVal">
+    <button v-on:click="add">添加</button>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>名称</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        <!-- 通过filterBy过滤器根据条件过滤字段 -->
+        <tr v-for="item in list | filterBy searchVal in 'name'" track-by="$index">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.time}}</td>
+            <td><a href="javasrcipt:viod(0)" @click="del(item.id)">删除</a></td>
+        </tr>
+    </table>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                tableid:0,
+                tablename:'',
+                list:[
+                    {id:1,name:"奔驰",time:new Date()},
+                    {id:2,name:"宝马",time:new Date()},
+                    {id:2,name:"宝马",time:new Date()}
+                ],
+                searchVal:''
+            },
+            methods:{
+                add:function(){
+                    var id = this.tableid;
+                    var name =  this.tablename;
+                    this.list.push({id:id,name:name,time:new Date()});
+                    this.tableid = 0;
+                    this.tablename = '';
+                },
+                del:function(id){
+                    //获取数组索引
+                    var index = this.list.findIndex(function(obj){
+                        return obj.id == id;
+                    });
+                    this.list.splice(index,1);
+                }
+            }
+        })
+    </script>
+</div>
+</body>
+</html>

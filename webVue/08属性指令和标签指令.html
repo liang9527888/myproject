@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue1028.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="id" v-color colorname="red">
+    <input type="text" v-model="name" @keydown.enter="enteradd">
+    <input type="text" v-model="searchVal" v-focus>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>名称</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        <tr v-for="item in list | filterBy searchVal in 'name'" track-by="$index">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.time}}</td>
+            <td><a href="javascript:void(0)" @click="del($index)">删除</a></td>
+        </tr>
+    </table>
+    <button @click="add">添加记录</button>
+</div>
+<script>
+    //自定义获取焦点
+    Vue.directive('focus',function(){
+                this.el.focus();
+            }
+    )
+    //定义一个带有参数的指令
+    Vue.directive('color',{
+        //参数
+        params:["colorname"],
+        bind:function(){
+            var color = this.params.colorname;
+            this.el.style.color = color;
+        }
+    })
+    new Vue({
+        el:"#app",
+        data:{
+            //表单数据
+            list:[
+                {id:"1",name:"张三",time:new Date()},
+                {id:"2",name:"李四",time:new Date()},
+            ],
+            id:0,
+            name:"",
+            searchVal:''
+        },
+        methods:{
+            //删除制定记录
+            del:function(id){
+                //根据id获取list索引
+                var index = this.list.findIndex(function(obj){
+                    return obj.id == id;
+                });
+                //从list中删除制定索引
+                this.list.splice(index+1,1);
+            },
+            //添加记录
+            add:function(id){
+                this.list.push({id:this.id,name:this.name,time:new Date()});
+            },
+            enteradd:function(e){
+                this.list.push({id:this.id,name:this.name,time:new Date()});
+            }
+        }
+    });
+</script>
+</body>
+</html>

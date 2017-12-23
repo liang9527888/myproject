@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue2.js"></script>
+    <script src="../vue-router211.js"></script>
+</head>
+<body>
+    <div id="app">
+        <router-link to="/login">登录</router-link>
+        <router-link to="/register">注册</router-link>
+        <router-view></router-view>
+    </div>
+</body>
+<script>
+    //1.定义根组件
+    var app = {};
+    //2.定义组件
+    var login = {
+        template:"<h3>登录皮皮虾,我们走</h3>"
+    };
+    var register = {
+        template:"<h3>注册皮皮虾,我们走</h3>"
+    };
+    //3.创建路由并设置路由规则
+    var router = new VueRouter({
+        routes:[
+            {path:"/",redirect:'/login'},
+            {path:"/login",component:login},
+            {path:"/register",component:register}
+                ]
+    });
+    //4.启用路由
+    new Vue({
+        el:"#app",
+        router:router
+    })
+</script>
+</html>

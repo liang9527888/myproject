@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue1028.js"></script>
+</head>
+<body>
+    <div id="app">
+        <hehe></hehe>
+    </div>
+    <template id="index">
+        <button @click="componentgo='login'">登陆</button>
+        <button @click="componentgo='register'">注册</button>
+        <div :is="componentgo"></div>
+    </template>
+</body>
+<script>
+    //创建组件
+    Vue.component("hehe",{
+        //设置默认加载组件
+        data:function(){
+            return {
+                componentgo:"register"
+            }
+        },
+        template:"#index",
+        components:{
+            "login":{
+                template:"<h3>大家好,我是登陆子组件</h3>"
+            },
+            "register":{
+                template:"<h3>大家好,我是注册子组件</h3>"
+            }
+        }
+    })
+    //创建vue对象,划分区域
+    new Vue({
+        el:"#app",
+        data:{}
+    })
+</script>
+</html>

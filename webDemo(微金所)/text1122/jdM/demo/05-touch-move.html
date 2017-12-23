@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            position: fixed;
+        }
+        a{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 5px solid blue;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<a href=""></a>
+<script>
+    var a=document.querySelector("a");
+    var startX=0;
+    var startY=0;
+    var moveX=0;
+    var moveY=0;
+    var distanceX=0;
+    var distanceY=0;
+
+    a.addEventListener("touchstart",function(e){
+        startX= e.touches[0].clientX;
+        startY= e.touches[0].clientY;
+        console.log(startX+"   "+startY);
+    });
+    a.addEventListener("touchmove",function(e){
+        moveX= e.touches[0].pageX;
+        moveY= e.touches[0].pageY;
+        console.log(moveX+"   "+moveY);
+        distanceX=moveX-startX;
+        distanceY=moveY-startY;
+
+        //开启过渡
+        a.style.webkitTransition="all .1s";
+        a.style.transition="all .1s";
+
+        //变换
+        a.style.webkitTransform="translateX("+distanceX+"px) translateY("+distanceY+"px)";
+        a.style.transform="translateX("+distanceX+"px) translateY("+distanceY+"px)";
+    });
+
+    a.addEventListener("touchend",function(e){
+        /*a.style.webkitTransform="translateX(0px) translateY(0px)";
+        a.style.transform="translateX(0px) translateY(0px)";*/
+         startX=0;
+         startY=0;
+         moveX=0;
+         moveY=0;
+         distanceX=0;
+         distanceY=0;
+    });
+</script>
+</body>
+</html>
