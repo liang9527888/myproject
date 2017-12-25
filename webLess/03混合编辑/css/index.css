@@ -1,0 +1,29 @@
+.top {
+  width: 100%;
+}
+.top h1 {
+  text-align: center;
+  color: deeppink;
+}
+.main {
+  width: 100%;
+  background: green;
+}
+.main ul {
+  width: 800px;
+  margin: 0 auto;
+}
+.main ul li {
+  background: greenyellow;
+  font-family: "微软雅黑";
+}
+.foot {
+  width: 100%;
+}
+.foot .tip {
+  width: 800px;
+  margin: 0 auto;
+  background: black;
+  text-align: center;
+  color: white;
+}

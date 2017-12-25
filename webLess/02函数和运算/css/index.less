@@ -1,0 +1,20 @@
+@b-radius:10px;
+.base (@w:100px;@h:100px;@b-color){
+  width: @w;
+  height: @h;
+  background: @b-color;
+}
+.box1 {
+  .base(100px,100px,#FFFF00+100);
+  border-raduis:@b-radius*1;
+}
+
+.box2 {
+  .base(100px,100px,#FFFF00-60);
+  border-radius:@b-radius*2;
+}
+
+.box3 {
+  .base(100px,100px,#FFFF00-100);
+  border-radius:@b-radius*3;
+}

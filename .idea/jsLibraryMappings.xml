@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/vue1" libraries="{myProject/vue1/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webVue/itcastcms" libraries="{myProject/webVue/itcastcms/node_modules}" />
+    <file url="file://$PROJECT_DIR$/webVue/组件打包" libraries="{myProject/webVue/组件打包/node_modules}" />
+  </component>
+</project>
