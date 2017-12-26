@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26475039-f667-4a22-a148-1adb40abfefa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.ignore" afterPath="$PROJECT_DIR$/.gitignore" />
-    </list>
+    <list default="true" id="26475039-f667-4a22-a148-1adb40abfefa" name="Default" comment="" />
     <ignored path="myProject.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -237,12 +234,12 @@
       <workItem from="1514187985172" duration="8191000" />
       <workItem from="1514253420366" duration="156000" />
       <workItem from="1514266726067" duration="49000" />
-      <workItem from="1514267445450" duration="60000" />
+      <workItem from="1514267445450" duration="636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8456000" />
+    <option name="totallyTimeSpent" value="9032000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -254,7 +251,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="692" y="447" width="1940" height="1065" extended-state="0" />
+    <frame x="692" y="447" width="1940" height="1065" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973711" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
