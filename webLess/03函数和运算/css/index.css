@@ -1,0 +1,18 @@
+body {
+  background: greenyellow;
+}
+.box1 {
+  width: 100px;
+  height: 100px;
+  background: #646464;
+}
+.box2 {
+  width: 100px;
+  height: 100px;
+  background: #c8c8c8;
+}
+.box3 {
+  width: 100px;
+  height: 100px;
+  background: #fafafa;
+}

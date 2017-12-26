@@ -1,0 +1,23 @@
+@base-w: 100px;
+@base-h: 100px;
+@b-color: #000000;
+.BWH(@w,@h,@b-color){
+  width: @w;
+  height: @h;
+  background: @b-color;
+}
+body {
+  background: greenyellow;
+}
+
+.box1 {
+  .BWH(@base-w,@base-h,@b-color+100);
+}
+
+.box2 {
+  .BWH(@base-w,@base-h,@b-color+200);
+}
+
+.box3 {
+  .BWH(@base-w,@base-h,@b-color+250);
+}
